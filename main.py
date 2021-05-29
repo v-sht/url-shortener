@@ -34,7 +34,6 @@ if __name__ == "__main__":
     parser.add_argument('url', help="Введите URL или bitlink")
     args = parser.parse_args()
     link = args.url
-    #link = input("Введите URL для сокращения или bitlink для подсчёта переходов: ")
     parsed_bitlink = urlparse(link)
     load_dotenv()
     token = os.environ["BITLY_TOKEN"]
