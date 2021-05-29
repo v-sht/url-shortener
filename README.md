@@ -1,17 +1,25 @@
-# Bitly url shorterer
+# Обрезка ссылок с помощью Битли
 
-[TODO: here would be project description]
+Скрипт предназначен для сокращения ссылок, а также подсчёта количества переходов по битлинку с помощью API сервиса Bitly.
 
-### How to install
+### Как установить
 
-[TODO: tell user where he should get keys, where they should be and how they look like]
 
-Python3 should be already installed. 
-Then use `pip` (or `pip3`, if there is a conflict with Python2) to install dependencies:
+Для использования скрипта необходимо зарегистрироваться в сервисе [bitly.com](https://bitly.com/) и получить токен (GENERIC ACCESS TOKEN). Токен выглядит так: `17c09e20ad155405123ac1977542fecf00231da7`. Ссылка на получание токена есть в [документации](https://dev.bitly.com).
+
+Токен нужно присвоить переменной BITLY_TOKEN в файле .env:
+
+```
+BITLY_TOKEN = "ВашТокен"
+```
+
+Python3 должен быть уже установлен. 
+Затем используйте `pip` (или `pip3`, есть конфликт с Python2) для установки зависимостей:
 ```
 pip install -r requirements.txt
 ```
 
-### Project Goals
+### Цель проекта
 
-The code is written for educational purposes on online-course for web-developers [dvmn.org](https://dvmn.org/).
+Код написан в образовательных целях на онлайн-курсе для веб-разработчиков [dvmn.org](https://dvmn.org/).
+
