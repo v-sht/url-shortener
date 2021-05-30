@@ -16,7 +16,8 @@ def shorten_link(token, url):
 
 def count_clicks(token, link):
     response = requests.get(
-        "https://api-ssl.bitly.com/v4/bitlinks/{0}{1}/clicks/summary".format(link.netloc, link.path),
+        "https://api-ssl.bitly.com/v4/bitlinks/{0}{1}/clicks/summary"
+        .format(link.netloc, link.path),
         headers={"Authorization": "Bearer {}".format(token)})
     response.raise_for_status()
     return response.json()["total_clicks"]
@@ -24,14 +25,17 @@ def count_clicks(token, link):
 
 def is_bitlink(token, link):
     response = requests.get(
-        "https://api-ssl.bitly.com/v4/bitlinks/{0}{1}".format(link.netloc, link.path),
+        "https://api-ssl.bitly.com/v4/bitlinks/{0}{1}"
+        .format(link.netloc, link.path),
         headers={"Authorization": "Bearer {}".format(token)})
     return response.ok
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Программа для сокращения ссылок или подсчёта количества переходов для bitlink")
-    parser.add_argument('url', help="Введите URL или bitlink")
+    parser = argparse.ArgumentParser(
+        description="Программа для сокращения ссылок или "
+                    "подсчёта количества переходов для bitlink")
+    parser.add_argument("url", help="Введите URL или bitlink")
     args = parser.parse_args()
     link = args.url
     parsed_bitlink = urlparse(link)
